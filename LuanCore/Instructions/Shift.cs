@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LuanCore.Instructions
 {
+    [Serializable]
     public class Shift : Instruction
     {
         public Shift (List<Stmt> block,
@@ -14,6 +15,7 @@ namespace LuanCore.Instructions
             : base(block, argsDict, subinsts)
         {
         }
+        public Shift() { }
 
         public override void Form()
         {
@@ -24,9 +26,15 @@ namespace LuanCore.Instructions
                 case "scene":
                     Typ = ShiftTyp.scene;break;
             }
-            Target = ArgsDict["label"];
+            Target = ArgsDict["target"];
         }
 
+        public override string ToString()
+        {
+            return "@shift " +
+                $" target=\"{Target}\"" +
+                $" type=\"{Typ.ToString()}\" " + GetBlockStr();
+        }
         public string Target { get; set; }
         public ShiftTyp Typ { get; set; }
     }

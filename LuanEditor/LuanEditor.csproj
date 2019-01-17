@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25234A70-3FE3-417C-A207-5583DC0FCA72}</ProjectGuid>
+    <ProjectGuid>{3AEC1B48-F915-4D90-B534-189A6DD14C65}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>LuanEditor</RootNamespace>
     <AssemblyName>LuanEditor</AssemblyName>
@@ -13,6 +13,7 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,11 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sprache, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sprache.2.2.0\lib\net45\Sprache.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,7 +57,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Scriptor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,6 +64,109 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Editor.cs" />
+    <Compile Include="LuanForms\AddSceneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\AddSceneForm.Designer.cs">
+      <DependentUpon>AddSceneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\AddSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\AddSectionForm.Designer.cs">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\BgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\BgForm.Designer.cs">
+      <DependentUpon>BgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\BranchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\BranchForm.Designer.cs">
+      <DependentUpon>BranchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\ButtonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\ButtonForm.Designer.cs">
+      <DependentUpon>ButtonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\CStandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\CStandForm.Designer.cs">
+      <DependentUpon>CStandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\DialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\GuardendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\GuardendForm.Designer.cs">
+      <DependentUpon>GuardendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\GuardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\GuardForm.Designer.cs">
+      <DependentUpon>GuardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\MusicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\MusicForm.Designer.cs">
+      <DependentUpon>MusicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\NewProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\NewProjectForm.Designer.cs">
+      <DependentUpon>NewProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\PicResourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\PicResourceForm.Designer.cs">
+      <DependentUpon>PicResourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\SignalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\SignalForm.Designer.cs">
+      <DependentUpon>SignalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\StandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\StandForm.Designer.cs">
+      <DependentUpon>StandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\SynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\SynForm.Designer.cs">
+      <DependentUpon>SynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuanForms\VocalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuanForms\VocalForm.Designer.cs">
+      <DependentUpon>VocalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -85,28 +187,80 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="LuanForms\AddSectionForm.resx">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\BgForm.resx">
+      <DependentUpon>BgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\BranchForm.resx">
+      <DependentUpon>BranchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\ButtonForm.resx">
+      <DependentUpon>ButtonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\CStandForm.resx">
+      <DependentUpon>CStandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\GuardendForm.resx">
+      <DependentUpon>GuardendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\GuardForm.resx">
+      <DependentUpon>GuardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\MusicForm.resx">
+      <DependentUpon>MusicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\NewProjectForm.resx">
+      <DependentUpon>NewProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\PicResourceForm.resx">
+      <DependentUpon>PicResourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\SignalForm.resx">
+      <DependentUpon>SignalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\StandForm.resx">
+      <DependentUpon>StandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\SynForm.resx">
+      <DependentUpon>SynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuanForms\VocalForm.resx">
+      <DependentUpon>VocalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LuanConvertor\LuanConvertor.csproj">
-      <Project>{5e018e14-1bc5-44d3-af1d-0abfae79e212}</Project>
-      <Name>LuanConvertor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LuanCore\LuanCore.csproj">
       <Project>{8120fc9e-f961-49c6-a13d-81d3c533e0e7}</Project>
       <Name>LuanCore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LuanUtils\LuanUtils.csproj">
+      <Project>{9a832348-4f09-4366-b8ee-6419c6cd99e7}</Project>
+      <Name>LuanUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(ProjectDir)DLLS\*" "$(TargetDir)DLLS\" /Y</PreBuildEvent>
+  </PropertyGroup>
 </Project>

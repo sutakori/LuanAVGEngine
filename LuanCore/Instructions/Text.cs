@@ -9,6 +9,7 @@ namespace LuanCore.Instructions
     /// <summary>
     /// 文本命令
     /// </summary>
+    [Serializable]
     public class Text: Instruction
     {
         public Text(List<Stmt> block, 
@@ -17,12 +18,22 @@ namespace LuanCore.Instructions
             :base(block, argsDict, subinsts)
         {
         }
+        public Text() { }
 
         public override void Form()
         {
             Content = ArgsDict["content"];
+            Vocal = SubInsts.Count == 0 ? null : SubInsts[0] as Vocal;
         }
 
+        public override string ToString()
+        {
+            return "@text" +
+                $" content=\"{Content}\"" +
+                " " + (Vocal == null ? "" : Vocal.ToString()) +
+                " " + GetBlockStr();
+        }
+        public Vocal Vocal { get; set; }
         public string Content { get; set; }
     }
 }

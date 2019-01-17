@@ -49,8 +49,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DynamicExpresso.Core, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicExpresso.Core.2.2.0\lib\net461\DynamicExpresso.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.8.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.8.5\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Vorbis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Vorbis.1.0.0.0\lib\net35\NAudio.Vorbis.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis, Version=0.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NVorbis.0.8.4.0\lib\NVorbis.dll</HintPath>
+    </Reference>
+    <Reference Include="Sprache, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sprache.2.2.0\lib\net45\Sprache.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +80,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Transitionals, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4747a3d6bcb35c80, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFTransitionals.1.0.0\lib\net35\Transitionals.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -70,20 +92,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\Audio\NAudioChannelPlayer.cs" />
+    <Compile Include="Core\Audio\NAudioPlayer.cs" />
     <Compile Include="Core\Elem\Bg.cs" />
     <Compile Include="Core\Elem\Bgm.cs" />
     <Compile Include="Core\Elem\Bgs.cs" />
+    <Compile Include="Core\Elem\Branch.cs" />
+    <Compile Include="Core\Elem\Button.cs" />
     <Compile Include="Core\Elem\Stand.cs" />
     <Compile Include="Core\Elem\Text.cs" />
     <Compile Include="Core\Elem\Vocal.cs" />
+    <Compile Include="Core\Graphic\MessageLayerDescriptor.cs" />
+    <Compile Include="Core\Graphic\Sprite.cs" />
+    <Compile Include="Core\Graphic\SpriteAnimation.cs" />
+    <Compile Include="Core\Graphic\SpriteDescriptor.cs" />
+    <Compile Include="Core\Graphic\ViewManager.cs" />
+    <Compile Include="Core\Graphic\ViewPageManager.cs" />
+    <Compile Include="Core\Graphic\Viewport2D.cs" />
+    <Compile Include="Core\Graphic\Viewport2DDescriptor.cs" />
     <Compile Include="Core\ResourceManager.cs" />
     <Compile Include="Core\VM\Context.cs" />
     <Compile Include="Core\VM\Frame.cs" />
     <Compile Include="Core\VM\Interpreter.cs" />
-    <Compile Include="Core\VM\StackMachine.cs" />
-    <Compile Include="Core\VM\SymbolTable.cs" />
-    <Compile Include="Utils\IOUtils.cs" />
-    <Compile Include="Utils\LogUtils.cs" />
+    <Compile Include="Core\VM\ResourceCachePool.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,16 +123,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\Renderer.cs" />
     <Compile Include="Core\RuntimeManager.cs" />
     <Compile Include="Core\World.cs" />
-    <Compile Include="Core\GlobalConfig.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageView\Save.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageView\Stage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageView\Save.xaml.cs">
+      <DependentUpon>Save.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageView\Stage.xaml.cs">
+      <DependentUpon>Stage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -119,6 +162,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,10 +171,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Audio\" />
-    <Folder Include="Core\Graphic\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
@@ -148,6 +189,13 @@
       <Project>{8120fc9e-f961-49c6-a13d-81d3c533e0e7}</Project>
       <Name>LuanCore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LuanUtils\LuanUtils.csproj">
+      <Project>{9a832348-4f09-4366-b8ee-6419c6cd99e7}</Project>
+      <Name>LuanUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)LuanEditor\DLLS\" /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LuanCore.Instructions
 {
+    [Serializable]
     public class Guard: Instruction
     {
         public Guard(List<Stmt> block,
@@ -14,15 +15,21 @@ namespace LuanCore.Instructions
             : base(block, argsDict, subinsts)
         {
         }
+        public Guard() { }
 
         public override void Form()
         {
-            Expr = Block;
+            Expr = new Expr(ArgsDict["expr"]);
         }
 
-        public List<Stmt> Expr { get; set; }
+        public override string ToString()
+        {
+            return $"@guard expr=\"{Expr.Lexeme}\" " + GetBlockStr();
+        }
+        public Expr Expr { get; set; }
     }
 
+    [Serializable]
     public class Guardend: Instruction
     {
         public Guardend(List<Stmt> block,
@@ -30,6 +37,12 @@ namespace LuanCore.Instructions
             List<Instruction> subinsts)
             : base(block, argsDict, subinsts)
         {
+        }
+        public Guardend() { }
+
+        public override string ToString()
+        {
+            return "@guardend " + " " + GetBlockStr();
         }
 
         public override void Form()

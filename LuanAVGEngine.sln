@@ -5,9 +5,14 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuanPlatform", "LuanPlatform\LuanPlatform.csproj", "{2755985D-A5C3-465E-8427-C51818655666}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuanConvertor", "LuanConvertor\LuanConvertor.csproj", "{5E018E14-1BC5-44D3-AF1D-0ABFAE79E212}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80811211-A344-4B06-92D3-F6F13718E98B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuanEditor", "LuanEditor\LuanEditor.csproj", "{25234A70-3FE3-417C-A207-5583DC0FCA72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuanUtils", "LuanUtils\LuanUtils.csproj", "{9A832348-4F09-4366-B8EE-6419C6CD99E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuanEditor", "LuanEditor\LuanEditor.csproj", "{3AEC1B48-F915-4D90-B534-189A6DD14C65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuanCore", "LuanCore\LuanCore.csproj", "{8120FC9E-F961-49C6-A13D-81D3C533E0E7}"
 EndProject
@@ -21,14 +26,14 @@ Global
 		{2755985D-A5C3-465E-8427-C51818655666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2755985D-A5C3-465E-8427-C51818655666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2755985D-A5C3-465E-8427-C51818655666}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E018E14-1BC5-44D3-AF1D-0ABFAE79E212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E018E14-1BC5-44D3-AF1D-0ABFAE79E212}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E018E14-1BC5-44D3-AF1D-0ABFAE79E212}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E018E14-1BC5-44D3-AF1D-0ABFAE79E212}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25234A70-3FE3-417C-A207-5583DC0FCA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25234A70-3FE3-417C-A207-5583DC0FCA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25234A70-3FE3-417C-A207-5583DC0FCA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25234A70-3FE3-417C-A207-5583DC0FCA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A832348-4F09-4366-B8EE-6419C6CD99E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A832348-4F09-4366-B8EE-6419C6CD99E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A832348-4F09-4366-B8EE-6419C6CD99E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A832348-4F09-4366-B8EE-6419C6CD99E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEC1B48-F915-4D90-B534-189A6DD14C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEC1B48-F915-4D90-B534-189A6DD14C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEC1B48-F915-4D90-B534-189A6DD14C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEC1B48-F915-4D90-B534-189A6DD14C65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8120FC9E-F961-49C6-A13D-81D3C533E0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8120FC9E-F961-49C6-A13D-81D3C533E0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8120FC9E-F961-49C6-A13D-81D3C533E0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU

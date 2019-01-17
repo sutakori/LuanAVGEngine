@@ -1,12 +1,45 @@
-﻿<Window x:Class="LuanPlatform.MainWindow"
+﻿<Window x:Name="window" x:Class="LuanPlatform.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LuanPlatform"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="800"
+        MouseUp="Window_Click">
+    <Viewbox x:Name="viewbox" Stretch="Uniform"  Width="{Binding ElementName=window, Mode=OneWay}" Height="{Binding ElementName=window, Mode=OneWay}">
+        <Canvas x:Name="mainCanvas" Width="{Binding ElementName=viewbox, Mode=OneWay}" Height="{Binding ElementName=viewbox, Mode=OneWay}">
+            <!-- 主舞台层 -->
+            <Frame x:Name="mainFrame" Height="720" Width="1280" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" Canvas.Left="0" Canvas.Top="0" Background="Black" ClipToBounds="True"
+                   />
+            <!-- UI层 -->
+            <Frame x:Name="uiFrame" Height="720" Width="1280" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" Canvas.Left="0" Canvas.Top="0" Background="Black" Visibility="Hidden" Panel.ZIndex="9999" ClipToBounds="True"/>
+            <!-- 遮罩层 -->
+            <Frame x:Name="maskFrame" Height="720" Width="1280" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" Canvas.Left="0" Canvas.Top="0" Background="Black" IsHitTestVisible="False" Visibility="Hidden" Panel.ZIndex="10000"/>
+            <!-- 提示语Label -->
+            <Label Name="BO_MessageLabel" Content="" FontSize="25" Foreground="White" Canvas.Left="10" Canvas.Top="10" Visibility="Hidden" IsHitTestVisible="False" Panel.ZIndex="11000">
+                <Label.Effect>
+                    <DropShadowEffect ShadowDepth="0" Color="Black" Opacity="1" BlurRadius="5"/>
+                </Label.Effect>
+            </Label>
+            <!-- Information -->
+            <Grid Name="BO_Information" VerticalAlignment="Top" HorizontalAlignment="Right" Canvas.Top="40" Canvas.Right="-400" Width="264" Height="71" Opacity="0" Panel.ZIndex="11000">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Image Name="BO_Information_Image" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="5"></Image>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="45*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="BO_Information_Name" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" FontSize="18"></TextBlock>
+                    <TextBlock Name="BO_Information_Detail" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" FontSize="11" TextWrapping="Wrap"></TextBlock>
+                </Grid>
+            </Grid>
+            <Button Visibility="Hidden" Width="50" Height="25" Content="AUTO" Click="Button_Click"/>
+        </Canvas>
+    </Viewbox>
 </Window>
