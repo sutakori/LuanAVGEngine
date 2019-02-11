@@ -1,10 +1,8 @@
-# LuanAVGEngine
+﻿# LuanAVGEngine
 
 简易的图形化文字AVG(Galgame)制作引擎，为本人本科C#程序设计课程大作业。项目功能基本可用，但目前不具备实际Galgame制作使用价值。
 
 .NET平台下较优秀的Galgame制作引擎可参考YuriAVGEngine(https://github.com/rinkako/YuriAVGEngine)
-
-本项目从之借鉴了部分基础设施的使用思路，但设计思路上不一致。
 
 
 
